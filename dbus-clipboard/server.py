@@ -1,6 +1,8 @@
 
+
 from pydbus import SessionBus
 from clipstack import ClipStack, Clip
+
 
 class ClipboardServer:
 

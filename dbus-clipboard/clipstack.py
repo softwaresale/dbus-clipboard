@@ -1,8 +1,10 @@
 
 import cliptypes
 
+
 class Clip:
     data = None
+
     def __init__(self, mime, data):
         self._mimetype = mime
         self._data = data
@@ -35,6 +37,7 @@ class Clip:
         if self.mimetype in cliptypes.mimetypes:
             converter = cliptypes.mimetypes[self.mimetype]
             self._data = converter.to_data(d)
+
 
 class ClipStack(list):
     def __init__(self, inital_objects=None):
