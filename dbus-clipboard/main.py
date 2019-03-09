@@ -1,13 +1,14 @@
+#!/usr/bin/env python3
 
-from .server import ClipboardServer
+from server import ClipboardServer
 import gi
 gi.require_version('Gtk', '3.0')
-from gi.repository import Glib
+from gi.repository import GLib
 from pydbus import SessionBus
 
 if __name__ == "__main__":
     # Get main loop and session bus
-    loop = Glib.MainLoop()
+    loop = GLib.MainLoop()
     bus = SessionBus()
 
     # Publish clipboard server to namespace

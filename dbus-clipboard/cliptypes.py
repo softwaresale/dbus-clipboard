@@ -1,5 +1,6 @@
 
 from abc import ABC
+from abc import abstractmethod
 import array
 
 
@@ -10,7 +11,7 @@ class AbstractConverter(ABC):
     mimetype should have a corresponding converter.
     """
     @staticmethod
-    @abc.abstractmethod
+    @abstractmethod
     def to_data(obj):
         """
         Static Method to convert an object into raw data
@@ -21,7 +22,7 @@ class AbstractConverter(ABC):
         pass
 
     @staticmethod
-    @abc.abstractmethod
+    @abstractmethod
     def to_object(data):
         """
         Static Method to convert raw data into an object

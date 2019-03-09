@@ -99,7 +99,8 @@ class ClipStack(list):
         """
         Inherited from list
         """
-        super().__init__(inital_objects)
+        if inital_objects is not None:
+            super().__init__(inital_objects)
 
     def add(self, clip, restrict=None):
         """
