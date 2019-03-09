@@ -1,5 +1,6 @@
 
 from abc import ABC
+import array
 
 
 class AbstractConverter(ABC):
@@ -40,18 +41,21 @@ class TextConverter(AbstractConverter):
     @staticmethod
     def to_data(obj):
         if isinstance(obj, str):
-            return obj
+            barray = array.array('b')
+            for b in bytes(obj, 'utf-8'):
+                barray.append(b)
+            return barray
         else:
             raise TypeError('Obj is not of type string')
 
     @staticmethod
-    def to_obj(data):
+    def to_object(arr):
         """
         Converts data into plain text.
-        :param data: Data to be unserialized
+        :param data: Python array of bytes to be deserialized
         :returns: String object
         """
-        return str(data)
+        return arr.tostring()
 
 
 mimetypes = {
