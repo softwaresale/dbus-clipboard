@@ -6,7 +6,7 @@ gi.require_version('Gtk', '3.0')
 from gi.repository import GLib
 from pydbus import SessionBus
 
-if __name__ == "__main__":
+def main():
     # Get main loop and session bus
     loop = GLib.MainLoop()
     bus = SessionBus()

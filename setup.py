@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import setuptools
 
 with open("README.md", "r") as fh:
@@ -15,7 +16,16 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: GPLv3+",
-        "Operating System :: OS Independent",
+        "Development Status :: 2 - Pre-Alpha",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+        "Natural Language :: English",
+        "Operating System :: POSIX :: Linux",
+        "Programming Language :: Python :: 3.7",
     ],
+    entry_points = {
+        'console_scripts': [
+            'dbus-clipboard=dbuscb.main:main'
+        ],
+    },
 )
