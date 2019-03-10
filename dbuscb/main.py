@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from server import ClipboardServer
+from .server import ClipboardServer
 import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import GLib

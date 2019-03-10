@@ -1,5 +1,6 @@
 
-import cliptypes
+from .cliptypes import mimetypes
+
 
 class Clip:
     """
@@ -16,8 +17,8 @@ class Clip:
         """
         # Set mimetype and appropriate converter
         self._mimetype = mime
-        if self._mimetype in cliptypes.mimetypes:
-            self.converter = cliptypes.mimetypes[self._mimetype]
+        if self._mimetype in mimetypes:
+            self.converter = mimetypes[self._mimetype]
         else:
             self.converter = None
         
@@ -59,7 +60,7 @@ class Clip:
         is supported.
         :param mime: string mimetype
         """
-        if mime not in cliptypes.mimetypes:
+        if mime not in mimetypes:
             self._mimetype = None
         else:
             self._mimetype = mime

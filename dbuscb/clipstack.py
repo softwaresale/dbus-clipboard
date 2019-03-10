@@ -1,6 +1,6 @@
 
-import cliptypes
-from clip import Clip
+from .clip import Clip
+
 
 class ClipStack(list):
     """
